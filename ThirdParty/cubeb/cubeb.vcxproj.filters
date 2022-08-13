@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cubeb\include\cubeb\cubeb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\subprojects\speex\arch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\subprojects\speex\fixed_generic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\subprojects\speex\resample_neon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\subprojects\speex\resample_sse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\subprojects\speex\speex_config_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\subprojects\speex\speex_resampler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\subprojects\speex\stack_alloc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\src\cubeb_array_queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\src\cubeb_assert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\src\cubeb_log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\src\cubeb_mixer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\src\cubeb_resampler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\src\cubeb_resampler_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\src\cubeb_ring_array.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\src\cubeb_ringbuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\src\cubeb_strings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\src\cubeb_utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\src\cubeb_utils_unix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\src\cubeb_utils_win.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cubeb\src\cubeb-internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cubeb\subprojects\speex\resample.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cubeb\src\cubeb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cubeb\src\cubeb_strings.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cubeb\src\cubeb_winmm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cubeb\src\cubeb_log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cubeb\src\cubeb_mixer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cubeb\src\cubeb_resampler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cubeb\src\cubeb_utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cubeb\src\cubeb_wasapi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

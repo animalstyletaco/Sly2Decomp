@@ -18,35 +18,63 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="zstd\lib\common\bits.h" />
+    <ClInclude Include="zstd\lib\common\bitstream.h" />
+    <ClInclude Include="zstd\lib\common\compiler.h" />
+    <ClInclude Include="zstd\lib\common\cpu.h" />
+    <ClInclude Include="zstd\lib\common\debug.h" />
+    <ClInclude Include="zstd\lib\common\error_private.h" />
+    <ClInclude Include="zstd\lib\common\fse.h" />
+    <ClInclude Include="zstd\lib\common\huf.h" />
+    <ClInclude Include="zstd\lib\common\mem.h" />
+    <ClInclude Include="zstd\lib\common\pool.h" />
+    <ClInclude Include="zstd\lib\common\portability_macros.h" />
+    <ClInclude Include="zstd\lib\common\threading.h" />
+    <ClInclude Include="zstd\lib\common\xxhash.h" />
+    <ClInclude Include="zstd\lib\common\zstd_deps.h" />
+    <ClInclude Include="zstd\lib\common\zstd_internal.h" />
+    <ClInclude Include="zstd\lib\common\zstd_trace.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="zstd\lib\common\debug.c" />
+    <ClCompile Include="zstd\lib\common\entropy_common.c" />
+    <ClCompile Include="zstd\lib\common\error_private.c" />
+    <ClCompile Include="zstd\lib\common\fse_decompress.c" />
+    <ClCompile Include="zstd\lib\common\pool.c" />
+    <ClCompile Include="zstd\lib\common\threading.c" />
+    <ClCompile Include="zstd\lib\common\xxhash.c" />
+    <ClCompile Include="zstd\lib\common\zstd_common.c" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5d46ec47-d471-4831-80c2-badd216b3b8d}</ProjectGuid>
-    <RootNamespace>Sly2Decomp</RootNamespace>
+    <ProjectGuid>{d7eeaf0c-d687-404f-93a7-c6c80b38f82b}</ProjectGuid>
+    <RootNamespace>zstd</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -72,7 +100,6 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\Sly2Decomp\ThirdParty;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -87,11 +114,15 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalOptions>/wd4996 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -101,11 +132,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -115,11 +149,14 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -129,40 +166,19 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Sly2Decomp.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\ThirdParty\filesystem.hpp" />
-    <ClInclude Include="..\ThirdParty\json.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ThirdParty\cubeb\cubeb.vcxproj">
-      <Project>{55a5fd04-1b68-441b-9acb-c2f2089a96e8}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\ThirdParty\fmt\fmt.vcxproj">
-      <Project>{84ad4319-5761-4580-820e-cf06db76fb96}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\ThirdParty\glfw\glfw.vcxproj">
-      <Project>{43c42893-45ee-4237-b996-bd9bad25ca80}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\ThirdParty\imgui\imgui.vcxproj">
-      <Project>{40be3878-7b67-48e8-a23b-eb0e13be681d}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\ThirdParty\zstd\zstd.vcxproj">
-      <Project>{d7eeaf0c-d687-404f-93a7-c6c80b38f82b}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

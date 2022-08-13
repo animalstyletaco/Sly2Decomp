@@ -1,15 +1,18 @@
 [submodule "ThirdParty/glfw"]
-	path = ThirdParty/glfw
+	path = ThirdParty/glfw/glfw
 	url = https://github.com/glfw/glfw.git
 [submodule "ThirdParty/googletest"]
 	path = ThirdParty/googletest
 	url = https://github.com/google/googletest.git
 [submodule "ThirdParty/imgui"]
-	path = ThirdParty/imgui
+	path = ThirdParty/imgui/imgui
 	url = https://github.com/ocornut/imgui.git
 [submodule "ThirdParty/cubeb"]
-	path = ThirdParty/cubeb
+	path = ThirdParty/cubeb/cubeb
 	url = https://github.com/mozilla/cubeb.git
 [submodule "ThirdParty/fmt"]
-	path = ThirdParty/fmt
+	path = ThirdParty/fmt/fmt
 	url = https://github.com/fmtlib/fmt.git
+[submodule "ThirdParty/zstd/zstd"]
+	path = ThirdParty/zstd/zstd
+	url = https://github.com/facebook/zstd.git
