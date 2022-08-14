@@ -16,3 +16,6 @@
 [submodule "ThirdParty/zstd/zstd"]
 	path = ThirdParty/zstd/zstd
 	url = https://github.com/facebook/zstd.git
+[submodule "ThirdParty/SDL_GameControllerDB"]
+	path = ThirdParty/SDL_GameControllerDB
+	url = https://github.com/gabomdq/SDL_GameControllerDB.git

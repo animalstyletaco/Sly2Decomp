@@ -15,15 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="fmt\src\format.cc">
+    <ClCompile Include="fpng.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="fmt\include\fmt\core.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="fmt\include\fmt\format.h">
+    <ClInclude Include="fpng.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

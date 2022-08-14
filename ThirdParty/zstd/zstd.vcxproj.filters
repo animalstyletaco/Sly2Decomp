@@ -63,6 +63,57 @@
     <ClInclude Include="zstd\lib\common\zstd_trace.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="zstd\lib\compress\clevels.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\compress\hist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\compress\zstd_compress_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\compress\zstd_compress_literals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\compress\zstd_compress_sequences.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\compress\zstd_compress_superblock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\compress\zstd_cwksp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\compress\zstd_double_fast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\compress\zstd_fast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\compress\zstd_lazy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\compress\zstd_ldm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\compress\zstd_ldm_geartab.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\compress\zstd_opt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\compress\zstdmt_compress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\decompress\zstd_ddict.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\decompress\zstd_decompress_block.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zstd\lib\decompress\zstd_decompress_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="zstd\lib\common\debug.c">
@@ -89,5 +140,59 @@
     <ClCompile Include="zstd\lib\common\zstd_common.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="zstd\lib\compress\fse_compress.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\compress\hist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\compress\huf_compress.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\compress\zstd_compress.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\compress\zstd_compress_literals.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\compress\zstd_compress_sequences.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\compress\zstd_compress_superblock.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\compress\zstd_double_fast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\compress\zstd_fast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\compress\zstd_lazy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\compress\zstd_ldm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\compress\zstd_opt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\compress\zstdmt_compress.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\decompress\huf_decompress.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\decompress\zstd_ddict.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\decompress\zstd_decompress.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zstd\lib\decompress\zstd_decompress_block.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="zstd\lib\decompress\huf_decompress_amd64.S" />
   </ItemGroup>
 </Project>

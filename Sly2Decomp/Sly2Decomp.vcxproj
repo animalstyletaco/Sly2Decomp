@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\Sly2Decomp\ThirdParty;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)ThirdParty\glad\include;$(SolutionDir)ThirdParty\glfw\glfw\include;$(SolutionDir)ThirdParty\zstd;$(SolutionDir);$(SolutionDir)Sly2Decomp;$(SolutionDir)ThirdParty\imgui\imgui;$(SolutionDir)ThirdParty\fmt\fmt\include;$(SolutionDir)ThirdParty;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -89,10 +89,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/wd4996 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)Debug\cubeb.lib;$(SolutionDir)Debug\zstd.lib;$(SolutionDir)Debug\glfw.lib;$(SolutionDir)Debug\glad.lib;$(SolutionDir)Debug\imgui.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -140,11 +143,66 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="common\audio\audio_formats.cpp" />
+    <ClCompile Include="common\dma\dma_copy.cpp" />
+    <ClCompile Include="common\log\log.cpp" />
+    <ClCompile Include="common\math\geometry.cpp" />
+    <ClCompile Include="common\util\Assert.cpp" />
+    <ClCompile Include="common\util\BitUtils.cpp" />
+    <ClCompile Include="common\util\compress.cpp" />
+    <ClCompile Include="common\util\crc32.cpp" />
+    <ClCompile Include="common\util\FileUtil.cpp" />
+    <ClCompile Include="common\util\FrameLimiter.cpp" />
+    <ClCompile Include="common\util\json_util.cpp" />
+    <ClCompile Include="common\util\read_iso_file.cpp" />
+    <ClCompile Include="common\util\SimpleThreadGroup.cpp" />
+    <ClCompile Include="common\util\Timer.cpp" />
+    <ClCompile Include="common\util\unicode_util.cpp" />
+    <ClCompile Include="common\versions.cpp" />
+    <ClCompile Include="game\DebugGui.cpp" />
+    <ClCompile Include="game\Display.cpp" />
+    <ClCompile Include="Game\Graphics.cpp" />
+    <ClCompile Include="game\opengl.cpp" />
+    <ClCompile Include="game\OpenGLRenderer.cpp" />
+    <ClCompile Include="game\opengl_utils.cpp" />
+    <ClCompile Include="Game\Peripherals.cpp" />
     <ClCompile Include="Sly2Decomp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ThirdParty\filesystem.hpp" />
     <ClInclude Include="..\ThirdParty\json.hpp" />
+    <ClInclude Include="common\audio\audio_formats.h" />
+    <ClInclude Include="common\common_types.h" />
+    <ClInclude Include="common\dma\dma.h" />
+    <ClInclude Include="common\dma\dma_copy.h" />
+    <ClInclude Include="common\log\log.h" />
+    <ClInclude Include="common\math\geometry.h" />
+    <ClInclude Include="common\math\Vector.h" />
+    <ClInclude Include="common\util\Assert.h" />
+    <ClInclude Include="common\util\BinaryReader.h" />
+    <ClInclude Include="common\util\BinaryWriter.h" />
+    <ClInclude Include="common\util\BitUtils.h" />
+    <ClInclude Include="common\util\colors.h" />
+    <ClInclude Include="common\util\compress.h" />
+    <ClInclude Include="common\util\crc32.h" />
+    <ClInclude Include="common\util\FileUtil.h" />
+    <ClInclude Include="common\util\FrameLimiter.h" />
+    <ClInclude Include="common\util\json_util.h" />
+    <ClInclude Include="common\util\math_util.h" />
+    <ClInclude Include="common\util\read_iso_file.h" />
+    <ClInclude Include="common\util\Serializer.h" />
+    <ClInclude Include="common\util\SimpleThreadGroup.h" />
+    <ClInclude Include="common\util\SmallVector.h" />
+    <ClInclude Include="common\util\Timer.h" />
+    <ClInclude Include="common\util\unicode_util.h" />
+    <ClInclude Include="common\versions.h" />
+    <ClInclude Include="game\DebugGui.h" />
+    <ClInclude Include="game\Display.h" />
+    <ClInclude Include="Game\Graphics.h" />
+    <ClInclude Include="game\opengl.h" />
+    <ClInclude Include="game\OpenGLRenderer.h" />
+    <ClInclude Include="game\opengl_utils.h" />
+    <ClInclude Include="Game\Peripherals.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ThirdParty\cubeb\cubeb.vcxproj">
@@ -153,8 +211,11 @@
     <ProjectReference Include="..\ThirdParty\fmt\fmt.vcxproj">
       <Project>{84ad4319-5761-4580-820e-cf06db76fb96}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\ThirdParty\glfw\glfw.vcxproj">
-      <Project>{43c42893-45ee-4237-b996-bd9bad25ca80}</Project>
+    <ProjectReference Include="..\ThirdParty\fpng\fpng.vcxproj">
+      <Project>{a8f07fce-d674-4272-9c02-e1907aa8dc92}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParty\glad\glad.vcxproj">
+      <Project>{f781dc6c-8cf7-4a59-8da8-fd7681eb73dd}</Project>
     </ProjectReference>
     <ProjectReference Include="..\ThirdParty\imgui\imgui.vcxproj">
       <Project>{40be3878-7b67-48e8-a23b-eb0e13be681d}</Project>

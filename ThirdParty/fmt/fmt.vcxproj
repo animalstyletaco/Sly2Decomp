@@ -153,11 +153,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="pch.h" />
+    <ClCompile Include="fmt\src\format.cc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="fmt\src\format.cc" />
+    <ClInclude Include="fmt\include\fmt\core.h" />
+    <ClInclude Include="fmt\include\fmt\format.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
